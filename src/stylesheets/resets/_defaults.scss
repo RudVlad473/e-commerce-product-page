@@ -1,0 +1,19 @@
+@use "../abstracts/" as *;
+
+:root {
+  --main-padding: 10em;
+}
+
+html {
+  font-family: $mainFontFamily, "Calibri";
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--blue-400);
+  font-weight: $normal;
+
+  background-color: var(--white);
+
+  padding-inline: var(--main-padding);
+}
