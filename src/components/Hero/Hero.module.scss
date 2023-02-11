@@ -1,3 +1,48 @@
+:root {
+  --footer-gap: 1em;
+}
+
 .hero {
   grid-area: hero;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--nav-gap);
+}
+
+.headers-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.subheader {
+  color: var(--orange-200);
+  font-size: 0.9em;
+  letter-spacing: 0.1em;
+
+  opacity: 0.9;
+}
+
+.header {
+  font-size: 2.5em;
+}
+
+.article {
+  color: var(--blue-300);
+}
+
+.footer {
+  display: flex;
+  gap: var(--footer-gap);
+}
+
+.cart-btn {
+  display: flex;
+  gap: var(--footer-gap);
+}
+
+.subheader,
+.header {
+  font-weight: var(--bold);
 }

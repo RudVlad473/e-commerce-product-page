@@ -1,9 +1,9 @@
-import React, { FC, useReducer } from "react"
+import { FC, useReducer } from "react"
 import { galleryReducer } from "../../reducers/Gallery/gallery"
+import { Gallery as GalleryType } from "../../reducers/Gallery/types"
+import Thumbnails from "../Thumbnails/Thumbnails"
 import Figure from "../UI/FIgure/Figure"
 import styles from "./Gallery.module.scss"
-import { Gallery as GalleryType } from "../../reducers/Gallery/types"
-import { setFeaturedPic } from "../../reducers/Gallery/actionCreators"
 
 export interface GalleryPicture {
   pictureUrl: string
@@ -28,17 +28,7 @@ const Gallery: FC<GalleryProps> = ({ galleryPictures }) => {
         className={styles["gallery__featured"]}
         alt="featured picture"
       />
-      <footer className={styles["gallery__thumbnails"]}>
-        {galleryPictures.map(({ thumbnailUrl }, index) => (
-          <Figure
-            key={thumbnailUrl + index}
-            className={styles["gallery__thumbnail"]}
-            src={thumbnailUrl}
-            alt={`gallery picture #${index + 1}`}
-            onClick={() => dispatchGallery(setFeaturedPic(index))}
-          />
-        ))}
-      </footer>
+      <Thumbnails {...{ galleryPictures, featuredPic, dispatchGallery }} />
     </div>
   )
 }

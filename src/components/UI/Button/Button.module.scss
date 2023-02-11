@@ -1,0 +1,29 @@
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: none;
+  border-radius: var(--counter-border-radius);
+
+  background-color: var(--orange-200);
+
+  padding: calc(var(--counter-item-padding) * 1.5);
+
+  color: var(--white);
+  font-weight: var(--bold);
+
+  width: 100%;
+
+  transition: all 0.25s ease-in;
+
+  box-shadow: 0px 0.75em 0.75em 0px rgba(255, 237, 224, 0.1);
+
+  &:hover {
+    box-shadow: 0px 0.5em 0.5em 0.25em rgba(255, 237, 224, 0.1);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}

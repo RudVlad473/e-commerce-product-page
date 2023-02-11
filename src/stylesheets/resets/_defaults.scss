@@ -1,17 +1,17 @@
 @use "../abstracts/" as *;
 
 :root {
-  --main-padding: 10em;
+  --main-padding: 7em;
 }
 
 html {
-  font-family: $mainFontFamily, "Calibri";
+  font-family: var(--mainFontFamily), "Calibri";
   scroll-behavior: smooth;
 }
 
 body {
   color: var(--blue-400);
-  font-weight: $normal;
+  font-weight: var(--normal);
 
   background-color: var(--white);
 
