@@ -1,6 +1,17 @@
+:root {
+  --main-section-gap: 6em;
+}
+
 .main-grid {
   display: grid;
-  grid-template-areas:
-    "nav     nav  "
-    "gallery descr";
+  grid-template-areas: "gallery hero";
+  column-gap: 8em;
+
+  padding-inline: 3.5em;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-section-gap);
 }
