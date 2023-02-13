@@ -1,0 +1,10 @@
+.empty-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: var(--bold);
+  color: var(--blue-300);
+
+  padding-block: 5em;
+}

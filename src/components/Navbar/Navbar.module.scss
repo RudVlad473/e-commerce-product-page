@@ -8,15 +8,5 @@
 
   border-bottom: 2px solid var(--blue-100);
 
-  padding-block: var(--nav-gap);
-}
-
-.nav-list {
-  display: flex;
-  gap: var(--nav-gap);
-
-  margin-left: calc(var(--nav-gap) * 2);
-
-  color: var(--blue-400);
-  opacity: 0.5;
+  //padding-block: var(--nav-gap);
 }

@@ -1,14 +1,17 @@
+export type CartTypes = "ADD_ITEM" | "REMOVE_ITEM"
 
+export type CartItem = {
+  name: string
+  price: number
+  quantity: number
+  thumbnailUrl: string
+}
 
-// export type GalleryTypes = "SET_FEATURED_PIC"
+export type Cart = CartItem[]
 
-// export type Gallery = GalleryProps & {
-//   featuredPic: number
-// }
+export type CartPayload = CartItem | CartItem["name"]
 
-// export type GalleryPayload = number | undefined
-
-// export interface GalleryAction {
-//   type: GalleryTypes
-//   payload: GalleryPayload
-// }
+export interface CartAction {
+  type: CartTypes
+  payload: CartPayload
+}

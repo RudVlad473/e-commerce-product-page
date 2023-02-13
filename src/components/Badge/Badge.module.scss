@@ -1,0 +1,19 @@
+@use "../UI/Button/Button.module.scss" as *;
+
+.container {
+  position: relative;
+}
+
+.badge {
+  --badge-offset: -25%;
+
+  @extend .base-element;
+
+  position: absolute;
+  top: var(--badge-offset);
+  right: var(--badge-offset);
+
+  padding: 0px 0.4em;
+
+  font-size: 0.75em;
+}

@@ -1,13 +1,20 @@
-import { GalleryPayload, GalleryAction } from "./types"
+import { Gallery, GalleryAction } from "./types"
 
-export const setFeaturedPic = (
-  pictureIndex: NonNullable<GalleryPayload>
+const setFeaturedPic = (
+  featuredPicIndex: Gallery["featuredPic"]
 ): GalleryAction => ({
   type: "SET_FEATURED_PIC",
-  payload: pictureIndex,
+  payload: featuredPicIndex,
 })
 
-export const showDesktopGallery = (): GalleryAction => ({
-  type: "SET_FEATURED_PIC",
+const nextPic = (): GalleryAction => ({
+  type: "NEXT_PIC",
   payload: undefined,
 })
+
+const prevPic = (): GalleryAction => ({
+  type: "PREV_PIC",
+  payload: undefined,
+})
+
+export { setFeaturedPic, nextPic, prevPic }

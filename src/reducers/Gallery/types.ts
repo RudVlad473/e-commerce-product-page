@@ -1,14 +1,17 @@
-import { GalleryProps } from "../../components/Gallery/Gallery"
+import { GalleryPicture } from "../../components/Gallery/types"
 
-export type GalleryTypes = "SET_FEATURED_PIC"
+type GalleryTypes = "SET_FEATURED_PIC" | "NEXT_PIC" | "PREV_PIC"
 
-export type Gallery = GalleryProps & {
+type Gallery = {
   featuredPic: number
+  pictures: GalleryPicture[]
 }
 
-export type GalleryPayload = number | undefined
+type GalleryPayload = number | undefined
 
-export interface GalleryAction {
+interface GalleryAction {
   type: GalleryTypes
   payload: GalleryPayload
 }
+
+export type { GalleryTypes, Gallery, GalleryPayload, GalleryAction }

@@ -1,13 +1,22 @@
 import classNames from "classnames"
-import React, { FC, memo } from "react"
-import { setFeaturedPic } from "../../reducers/Gallery/actionCreators"
-import { Gallery, GalleryAction } from "../../reducers/Gallery/types"
-import styles from "../Gallery/Gallery.module.scss"
-import Figure from "../UI/FIgure/Figure"
+import React, { FC, memo, useContext } from "react"
+import { GalleryContext } from "../../context/GalleryContext"
+import { useGallery } from "../../hooks/useGallery"
 
-const Thumbnails: FC<
-  Gallery & { dispatchGallery: React.Dispatch<GalleryAction> }
-> = ({ galleryPictures, featuredPic, dispatchGallery }) => {
+import styles from "../Gallery/Gallery.module.scss"
+import Figure from "../UI/Figure/Figure"
+
+export type ThumbnailsProps = Pick<
+  ReturnType<typeof useGallery>,
+  "featuredPic" | "setFeaturedPicture"
+>
+
+const Thumbnails: FC<ThumbnailsProps> = ({
+  featuredPic,
+  setFeaturedPicture,
+}) => {
+  const { galleryPictures } = useContext(GalleryContext)
+
   return (
     <footer className={styles["gallery__thumbnails"]}>
       {galleryPictures.map(({ thumbnailUrl }, index) => (
@@ -18,7 +27,7 @@ const Thumbnails: FC<
           })}
           src={thumbnailUrl}
           alt={`gallery picture #${index + 1}`}
-          onClick={() => dispatchGallery(setFeaturedPic(index))}
+          onClick={() => setFeaturedPicture(index)}
         />
       ))}
     </footer>

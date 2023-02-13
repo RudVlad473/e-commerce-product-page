@@ -17,7 +17,13 @@
 
   font-weight: var(--bold);
 
+  
+
   & > * {
     padding: calc(var(--counter-item-padding) * 2) var(--counter-item-padding);
+
+    &:first-child, &:last-child {
+      cursor: pointer;
+    }
   }
 }

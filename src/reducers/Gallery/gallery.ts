@@ -1,17 +1,33 @@
-import Gallery, { GalleryProps } from "../../components/Gallery/Gallery"
-import { GalleryAction, GalleryPayload } from "./types"
-import { Gallery as GalleryType } from "./types"
+import { getGalleryPictures } from "../../utils/getGalleryPictures"
+import { Gallery, GalleryAction } from "./types"
 
 function galleryReducer(
-  gallery: GalleryType,
+  gallery: Gallery,
   { type, payload }: GalleryAction
-): GalleryType {
+): Gallery {
   switch (type) {
     case "SET_FEATURED_PIC": {
-      return { ...gallery, featuredPic: payload as number,}
+      return { ...gallery, featuredPic: payload as number }
     }
-    
+    case "NEXT_PIC": {
+      return {
+        ...gallery,
+        featuredPic: (gallery.featuredPic + 1) % gallery.pictures.length,
+      }
+    }
+    case "PREV_PIC": {
+      return {
+        ...gallery,
+        featuredPic:
+          Math.abs(gallery.featuredPic - 1) % gallery.pictures.length,
+      }
+    }
   }
 }
 
-export { galleryReducer }
+const initialGalleryState: Gallery = {
+  featuredPic: 0,
+  pictures: getGalleryPictures(),
+}
+
+export { galleryReducer, initialGalleryState }

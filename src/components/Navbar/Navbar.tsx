@@ -2,24 +2,27 @@ import React from "react"
 import logo from "../../assets/logo.svg"
 import styles from "./Navbar.module.scss"
 import User from "../User/User"
+import Navlist from "../Navlist/Navlist"
 
 const Navbar = () => {
   return (
-    <div className={styles["nav"]}>
+    <nav className={styles["nav"]}>
       <figure>
         <img src={logo} alt="logo" />
       </figure>
-      <nav>
-        <ul className={styles["nav-list"]}>
-          <li>Collections</li>
-          <li>Men</li>
-          <li>Women</li>
-          <li>About</li>
-          <li>Contact</li>
-        </ul>
-      </nav>
+
+      <Navlist
+        links={[
+          { displayName: "Collections", link: "#" },
+          { displayName: "Men", link: "#" },
+          { displayName: "Women", link: "#" },
+          { displayName: "About", link: "#" },
+          { displayName: "Contact", link: "#" },
+        ]}
+      />
+
       <User />
-    </div>
+    </nav>
   )
 }
 

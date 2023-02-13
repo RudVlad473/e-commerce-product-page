@@ -1,4 +1,4 @@
-import { GalleryPicture } from "./../components/Gallery/Gallery"
+import { GalleryPicture } from "../components/Gallery/types"
 
 function getPictureUrl(pictureName: string): string {
   return new URL(`../assets/${pictureName}`, import.meta.url).href

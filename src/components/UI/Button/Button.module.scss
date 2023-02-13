@@ -1,4 +1,4 @@
-.button {
+.base-element {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,10 +8,14 @@
 
   background-color: var(--orange-200);
 
-  padding: calc(var(--counter-item-padding) * 1.5);
-
   color: var(--white);
   font-weight: var(--bold);
+}
+
+.button {
+  @extend .base-element;
+
+  padding: calc(var(--counter-item-padding) * 1.5);
 
   width: 100%;
 

@@ -1,0 +1,53 @@
+@use "./../Gallery/Gallery.module.scss" as *;
+
+:root {
+  --cart-item-gap: 0.75em;
+}
+
+.cart-item {
+  display: grid;
+  grid-template-areas:
+    "thumbnail name  can"
+    "thumbnail price can";
+  gap: 0.75em;
+  align-items: center;
+
+  color: var(--blue-300);
+}
+
+.name {
+  grid-area: name;
+}
+
+.price {
+  grid-area: price;
+
+  display: flex;
+  gap: var(--cart-item-gap);
+}
+
+.sum-price {
+}
+
+.total-price {
+  color: var(--blue-400);
+  font-weight: var(--bold);
+}
+
+.can {
+  grid-area: can;
+
+  justify-self: end;
+
+  cursor: pointer;
+}
+
+.thumbnail {
+  grid-area: thumbnail;
+
+  width: var(--user-avatar-width);
+
+  &__pic {
+    border-radius: calc(var(--gallery__pic-border-radius) * 0.25);
+  }
+}
