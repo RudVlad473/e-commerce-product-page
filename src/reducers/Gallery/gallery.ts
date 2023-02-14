@@ -7,17 +7,18 @@ function galleryReducer(
 ): Gallery {
   switch (type) {
     case "SET_FEATURED_PIC": {
-      return { ...gallery, featuredPic: payload as number }
+      return {
+        ...gallery,
+        featuredPic: (payload as number) % gallery.pictures.length,
+      }
     }
     case "NEXT_PIC": {
-      console.log(Math.abs(--gallery.featuredPic % gallery.pictures.length))
       return {
         ...gallery,
         featuredPic: Math.abs(--gallery.featuredPic % gallery.pictures.length),
       }
     }
     case "PREV_PIC": {
-      console.log(Math.abs(++gallery.featuredPic % gallery.pictures.length))
       return {
         ...gallery,
         featuredPic: Math.abs(++gallery.featuredPic % gallery.pictures.length),
