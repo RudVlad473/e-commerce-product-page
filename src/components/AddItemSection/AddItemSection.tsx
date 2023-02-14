@@ -1,4 +1,4 @@
-import { FC, memo } from "react"
+import { FC } from "react"
 
 import cart from "../../assets/icon-white-cart.svg"
 import { useAddItem } from "../../hooks/useAddItem"
