@@ -6,8 +6,6 @@ import BlackBg from "./components/BlackBg/BlackBg"
 import Hero, { HeroProps } from "./components/Hero/Hero"
 import LoadingDesktopGallery from "./components/LoadingDesktopGallery/LoadingDesktopGallery"
 import Navbar from "./components/Navbar/Navbar"
-import { CartContext } from "./context/CartContext"
-import { GalleryContext } from "./context/GalleryContext"
 import { cartReducer } from "./reducers/Cart/cart"
 import { getGalleryPictures } from "./utils/getGalleryPictures"
 

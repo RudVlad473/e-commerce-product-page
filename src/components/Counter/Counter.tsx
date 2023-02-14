@@ -1,7 +1,8 @@
-import React, { FC, useState } from "react"
-import Figure from "../UI/Figure/Figure"
+import React, { FC } from "react"
+
 import minus from "../../assets/icon-minus.svg"
 import plus from "../../assets/icon-plus.svg"
+import Figure from "../UI/Figure/Figure"
 import styles from "./Counter.module.scss"
 
 const Counter: FC<{

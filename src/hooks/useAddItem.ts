@@ -22,7 +22,7 @@ const useAddItem = ({ name, price, quantity = 0 }: AddItemSectionProps) => {
     } else {
       alert("Select how many items of products you want to add to cart")
     }
-  }, [productQuantity, name, price])
+  }, [productQuantity, dispatchCart, name, price])
 
   return { productQuantity, setProductQuantity, onAddItemBtnClick }
 }
