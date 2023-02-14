@@ -2,9 +2,10 @@
 
 .gallery {
   @extend d, .gallery !optional;
-  //@extend .absolute-center !optional;
 
   z-index: 999;
+
+  max-width: 578px;
 }
 
 .main {

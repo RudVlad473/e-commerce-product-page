@@ -8,6 +8,7 @@
   gap: var(--nav-gap);
 
   margin-left: auto;
+  padding-left: calc(var(--nav-gap) * 0.5);
 }
 
 .user {

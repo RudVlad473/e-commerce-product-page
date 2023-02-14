@@ -1,5 +1,5 @@
 import classNames from "classnames"
-import React, { FC } from "react"
+import { FC } from "react"
 
 import rightArrow from "../../assets/icon-next.svg"
 import leftArrow from "../../assets/icon-previous.svg"

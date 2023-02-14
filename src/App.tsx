@@ -7,6 +7,7 @@ import Hero, { HeroProps } from "./components/Hero/Hero"
 import LoadingDesktopGallery from "./components/LoadingDesktopGallery/LoadingDesktopGallery"
 import Navbar from "./components/Navbar/Navbar"
 import { cartReducer } from "./reducers/Cart/cart"
+import { Cart } from "./reducers/Cart/types"
 import { getGalleryPictures } from "./utils/getGalleryPictures"
 
 const DesktopGallery = React.lazy(
@@ -26,8 +27,10 @@ const HeroPropsValues: HeroProps = {
   weather can offer.`,
 }
 
+const initialCart: Cart = []
+
 const App = () => {
-  const [cart, dispatchCart] = useReducer(cartReducer, [])
+  const [cart, dispatchCart] = useReducer(cartReducer, initialCart)
   const [isModalGallery, setIsModalGallery] = useState(false)
 
   return (

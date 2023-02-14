@@ -1,7 +1,9 @@
 import React from "react"
 
+import styles from "./LoadingDesktopGallery.module.scss"
+
 const LoadingDesktopGallery = () => {
-  return <div>Loading gallery...</div>
+  return <div className={styles["loading"]}>Loading gallery...</div>
 }
 
 export default LoadingDesktopGallery

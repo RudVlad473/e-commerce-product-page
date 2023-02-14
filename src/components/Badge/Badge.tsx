@@ -1,15 +1,23 @@
 import React, { FC } from "react"
+
 import styles from "./Badge.module.scss"
 
-const Badge: FC<{ text: string; children: React.ReactNode }> = ({
-  text,
-  children,
-}) => {
+const Badge: FC<{
+  text: string
+  isActive: boolean
+  children: React.ReactNode
+}> = ({ text, isActive = true, children }) => {
   return (
-    <div className={styles["container"]}>
-      <aside className={styles["badge"]}>{text}</aside>
-      {children}
-    </div>
+    <>
+      {isActive ? (
+        <div className={styles["container"]}>
+          <aside className={styles["badge"]}>{text}</aside>
+          {children}
+        </div>
+      ) : (
+        children
+      )}
+    </>
   )
 }
 

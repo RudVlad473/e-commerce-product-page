@@ -17,3 +17,9 @@ body {
 
   padding-inline: var(--main-padding);
 }
+
+@media screen and (max-width: $large) {
+  :root {
+    --main-padding: 4em;
+  }
+}

@@ -18,7 +18,7 @@ const User = () => {
         onClick={() => {
           setIsCartActive((i) => !i)
         }}>
-        <Badge text={`${badgeQuantity}`}>
+        <Badge text={`${badgeQuantity}`} isActive={badgeQuantity > 0}>
           <Figure src={cartImg} alt="cart" className={styles["cart"]} />
         </Badge>
       </div>

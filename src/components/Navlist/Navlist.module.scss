@@ -1,4 +1,6 @@
 .nav-list {
+  --item-border-bottom: 4px;
+
   display: flex;
   gap: var(--nav-gap);
   align-items: stretch;
@@ -6,7 +8,6 @@
   height: 100%;
 
   margin-left: calc(var(--nav-gap) * 2);
-  
 
   color: var(--blue-300);
   //opacity: 0.5;
@@ -14,8 +15,9 @@
   & > * {
     transition: all 0.2s ease-in;
 
-    border-bottom: 4px solid transparent;
-    
+    border-bottom: var(--item-border-bottom) solid transparent;
+
+    margin-bottom: calc(var(--item-border-bottom) * -1);
 
     padding-block: var(--nav-gap);
 

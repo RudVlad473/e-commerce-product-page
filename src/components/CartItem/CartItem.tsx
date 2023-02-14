@@ -7,8 +7,10 @@ import { CartItem as CartItemType } from "../../reducers/Cart/types"
 import Figure from "../UI/Figure/Figure"
 import styles from "./CartItem.module.scss"
 
-const CartItem: FC<{ cartItem: CartItemType; thumbnailUrl: string }> = ({
-  cartItem: { name, price, quantity },
+const CartItem: FC<CartItemType> = ({
+  name,
+  price,
+  quantity,
   thumbnailUrl,
 }) => {
   const { dispatchCart } = useContext(CartContext)

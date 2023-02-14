@@ -1,8 +1,7 @@
 import classNames from "classnames"
-import React, { FC, useContext } from "react"
+import { FC, useContext } from "react"
 
 import { CartContext } from "../../context/CartContext"
-import { GalleryContext } from "../../context/GalleryContext"
 import CartItem from "../CartItem/CartItem"
 import EmptyCart from "../EmptyCart/EmptyCart"
 import Button from "../UI/Button/Button"
@@ -10,7 +9,7 @@ import styles from "./Cart.module.scss"
 
 const Cart: FC<{ isActive: boolean }> = ({ isActive }) => {
   const { cart } = useContext(CartContext)
-  const { galleryPictures } = useContext(GalleryContext)
+  //const { galleryPictures } = useContext(GalleryContext)
 
   const hasItems = cart.length > 0
 
@@ -25,10 +24,7 @@ const Cart: FC<{ isActive: boolean }> = ({ isActive }) => {
           <>
             {cart.map((item) => (
               <li key={item.name}>
-                <CartItem
-                  cartItem={item}
-                  thumbnailUrl={galleryPictures[0].thumbnailUrl}
-                />
+                <CartItem {...item} />
               </li>
             ))}
             <Button>Checkout</Button>

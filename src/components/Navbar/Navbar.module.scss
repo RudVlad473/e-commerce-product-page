@@ -1,3 +1,5 @@
+@use "../../stylesheets/abstracts/" as *;
+
 :root {
   --nav-gap: 2.5em;
 }
@@ -13,4 +15,10 @@
 
 .logo {
   min-width: fit-content;
+}
+
+@media screen and (max-width: $large) {
+  :root {
+  --nav-gap: 1.75em;
+  }
 }

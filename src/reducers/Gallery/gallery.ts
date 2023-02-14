@@ -15,13 +15,16 @@ function galleryReducer(
     case "NEXT_PIC": {
       return {
         ...gallery,
-        featuredPic: Math.abs(--gallery.featuredPic % gallery.pictures.length),
+        featuredPic: (gallery.featuredPic + 1) % gallery.pictures.length,
       }
     }
     case "PREV_PIC": {
+      const { featuredPic } = gallery
+      const len = gallery.pictures.length
+
       return {
         ...gallery,
-        featuredPic: Math.abs(++gallery.featuredPic % gallery.pictures.length),
+        featuredPic: featuredPic === 0 ? len - 1 : (featuredPic - 1) % len,
       }
     }
   }
