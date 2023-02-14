@@ -1,0 +1,46 @@
+:root {
+  --arrow-aspect-ratio: 13 / 18;
+}
+
+.base-control {
+  --padding: 0.5em;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--white);
+
+  padding: var(--padding);
+
+  border-radius: 50%;
+
+  width: var(--user-avatar-width);
+
+  aspect-ratio: 1;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+
+  &__prev {
+    @extend .base-control;
+
+    translate: -50%;
+
+    & > * {
+      translate: calc(var(--arrow-aspect-ratio) * (-1px));
+    }
+  }
+
+  &__next {
+    @extend .base-control;
+
+    translate: 50%;
+
+    & > * {
+      translate: calc(var(--arrow-aspect-ratio) * 1px);
+    }
+  }
+}

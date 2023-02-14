@@ -1,4 +1,5 @@
-import { GalleryPicture } from "../../components/Gallery/types"
+import { GalleryPicture } from "../../context/GalleryContext"
+
 
 type GalleryTypes = "SET_FEATURED_PIC" | "NEXT_PIC" | "PREV_PIC"
 

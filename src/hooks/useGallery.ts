@@ -1,4 +1,5 @@
-import { useEffect, useReducer } from "react"
+import { useCallback, useReducer } from "react"
+
 import {
   nextPic,
   prevPic,
@@ -19,14 +20,13 @@ const useGallery = ({
     }
   )
 
-  const nextPicture = () => dispatchGallery(nextPic())
-  const prevPicture = () => dispatchGallery(prevPic())
-  const setFeaturedPicture = (newFeaturedPic: Gallery["featuredPic"]) =>
-    dispatchGallery(setFeaturedPic(newFeaturedPic))
-
-  useEffect(() => {
-    setFeaturedPicture(initialFeaturedPic)
-  }, [])
+  const nextPicture = useCallback(() => dispatchGallery(nextPic()), [])
+  const prevPicture = useCallback(() => dispatchGallery(prevPic()), [])
+  const setFeaturedPicture = useCallback(
+    (newFeaturedPic: Gallery["featuredPic"]) =>
+      dispatchGallery(setFeaturedPic(newFeaturedPic)),
+    []
+  )
 
   return { featuredPic, pictures, nextPicture, prevPicture, setFeaturedPicture }
 }

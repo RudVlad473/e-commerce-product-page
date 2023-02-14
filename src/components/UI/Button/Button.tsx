@@ -1,5 +1,6 @@
 import classNames from "classnames"
-import React, { DetailedHTMLProps, FC, HTMLProps } from "react"
+import React, { DetailedHTMLProps, FC } from "react"
+
 import styles from "./Button.module.scss"
 
 const Button: FC<

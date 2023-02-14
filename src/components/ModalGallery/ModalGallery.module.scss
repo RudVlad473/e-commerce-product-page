@@ -1,0 +1,32 @@
+@use "../DesktopGallery/DesktopGallery.module.scss" as d;
+
+.gallery {
+  @extend d, .gallery !optional;
+  //@extend .absolute-center !optional;
+
+  z-index: 999;
+}
+
+.main {
+  position: relative;
+}
+
+.featured {
+  @extend d, .featured !optional;
+}
+
+.thumbnails-container {
+  //padding-block:
+  padding-inline: var(--gallery-gap);
+}
+
+.close-btn {
+  border: none;
+  outline: none;
+
+  background-color: transparent;
+
+  width: fit-content;
+
+  margin-left: auto;
+}

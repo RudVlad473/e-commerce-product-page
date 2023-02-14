@@ -1,10 +1,11 @@
 import React, { FC, useContext } from "react"
-import { CartItem as CartItemType } from "../../reducers/Cart/types"
-import Figure from "../UI/Figure/Figure"
+
 import can from "../../assets/icon-delete.svg"
-import styles from "./CartItem.module.scss"
 import { CartContext } from "../../context/CartContext"
 import { removeItem } from "../../reducers/Cart/actionCreators"
+import { CartItem as CartItemType } from "../../reducers/Cart/types"
+import Figure from "../UI/Figure/Figure"
+import styles from "./CartItem.module.scss"
 
 const CartItem: FC<{ cartItem: CartItemType; thumbnailUrl: string }> = ({
   cartItem: { name, price, quantity },

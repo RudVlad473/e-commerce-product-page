@@ -4,12 +4,11 @@ import { Cart, CartAction, CartItem } from "./types"
 function cartReducer(cart: Cart, { type, payload }: CartAction): Cart {
   switch (type) {
     case "ADD_ITEM": {
-      
-      if (findItemByName(cart, (payload as CartItem).name)) {
+      const item = findItemByName(cart, (payload as CartItem).name)
+
+      if (item) {
         const newCart: Cart = [...cart]
-        findItemByName(newCart, (payload as CartItem).name)!.quantity += (
-          payload as CartItem
-        ).quantity
+        item.quantity += (payload as CartItem).quantity
 
         return newCart
       } else {

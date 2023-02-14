@@ -1,0 +1,17 @@
+@use "../User/User.module.scss" as u;
+
+.footer {
+  display: flex;
+  gap: var(--footer-gap);
+}
+
+.cart-btn {
+  display: flex;
+  gap: var(--footer-gap);
+
+  white-space: nowrap;
+}
+
+.cart {
+  @extend u, .cart !optional;
+}

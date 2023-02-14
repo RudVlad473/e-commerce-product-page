@@ -1,5 +1,6 @@
 import classNames from "classnames"
 import React, { FC, useContext } from "react"
+
 import { CartContext } from "../../context/CartContext"
 import { GalleryContext } from "../../context/GalleryContext"
 import CartItem from "../CartItem/CartItem"
@@ -23,7 +24,7 @@ const Cart: FC<{ isActive: boolean }> = ({ isActive }) => {
         {hasItems ? (
           <>
             {cart.map((item) => (
-              <li>
+              <li key={item.name}>
                 <CartItem
                   cartItem={item}
                   thumbnailUrl={galleryPictures[0].thumbnailUrl}

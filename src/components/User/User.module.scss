@@ -13,7 +13,8 @@
 .user {
   position: relative;
 
-  width: var(--user-avatar-width);
+  min-width: var(--user-avatar-width);
+  max-width: var(--user-avatar-width);
 
   transition: all 0.1s ease-in;
 
@@ -23,4 +24,9 @@
   &:hover {
     border-color: var(--orange-200);
   }
+}
+
+.cart {
+  min-width: calc(var(--user-avatar-width) * 0.5);
+  max-width: calc(var(--user-avatar-width) * 0.5);
 }

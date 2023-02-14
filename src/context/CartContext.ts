@@ -1,10 +1,13 @@
-import { Cart, CartAction } from "./../reducers/Cart/types"
 import { createContext } from "react"
 
-const CartContext = createContext<{
+import { Cart, CartAction } from "./../reducers/Cart/types"
+
+export type CartContextType = {
   cart: Cart
   dispatchCart: React.Dispatch<CartAction>
-}>({
+}
+
+const CartContext = createContext<CartContextType>({
   cart: [],
   dispatchCart: () => {},
 })

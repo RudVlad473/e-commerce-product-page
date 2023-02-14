@@ -1,4 +1,4 @@
-import { useState, useContext, useMemo } from "react"
+import { useContext, useMemo, useState } from "react"
 import { CartContext } from "../context/CartContext"
 
 export const useNavbarCart = () => {

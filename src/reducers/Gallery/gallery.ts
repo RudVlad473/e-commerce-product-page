@@ -10,16 +10,17 @@ function galleryReducer(
       return { ...gallery, featuredPic: payload as number }
     }
     case "NEXT_PIC": {
+      console.log(Math.abs(--gallery.featuredPic % gallery.pictures.length))
       return {
         ...gallery,
-        featuredPic: (gallery.featuredPic + 1) % gallery.pictures.length,
+        featuredPic: Math.abs(--gallery.featuredPic % gallery.pictures.length),
       }
     }
     case "PREV_PIC": {
+      console.log(Math.abs(++gallery.featuredPic % gallery.pictures.length))
       return {
         ...gallery,
-        featuredPic:
-          Math.abs(gallery.featuredPic - 1) % gallery.pictures.length,
+        featuredPic: Math.abs(++gallery.featuredPic % gallery.pictures.length),
       }
     }
   }
