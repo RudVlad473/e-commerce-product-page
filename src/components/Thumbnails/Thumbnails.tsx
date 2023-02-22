@@ -1,5 +1,5 @@
 import classNames from "classnames"
-import React, { FC, memo, useContext } from "react"
+import React, { FC, HTMLProps, memo, useContext } from "react"
 
 import { GalleryContext } from "../../context/GalleryContext"
 import { useGallery } from "../../hooks/useGallery"

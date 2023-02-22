@@ -1,3 +1,5 @@
+@use "../../stylesheets/abstracts/" as *;
+
 :root {
   --gallery__pic-border-radius: 0.75em;
 }
@@ -27,5 +29,11 @@
     &:hover {
       opacity: 0.75;
     }
+  }
+}
+
+@media screen and (max-width: $large) {
+  .container {
+    display: none;
   }
 }

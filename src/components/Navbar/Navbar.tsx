@@ -1,5 +1,3 @@
-import React from "react"
-
 import logo from "../../assets/logo.svg"
 import Navlist from "../Navlist/Navlist"
 import Figure from "../UI/Figure/Figure"

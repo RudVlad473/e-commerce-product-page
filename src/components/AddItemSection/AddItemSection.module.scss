@@ -1,4 +1,5 @@
 @use "../User/User.module.scss" as u;
+@use "../../stylesheets/abstracts/" as *;
 
 .footer {
   display: flex;
@@ -14,4 +15,10 @@
 
 .cart {
   @extend u, .cart !optional;
+}
+
+@media screen and (max-width: $large) {
+  .footer {
+    flex-wrap: wrap;
+  }
 }

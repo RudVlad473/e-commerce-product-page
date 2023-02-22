@@ -7,11 +7,21 @@
 .main-grid {
   display: grid;
   grid-template-areas: "gallery hero";
-  column-gap: 8em;
+  gap: 8em;
 
   align-items: center;
 
   padding-inline: 3.5em;
+
+  &--medium {
+    gap: 4vw;
+
+    padding-inline: 2em;
+
+    grid-template-areas:
+      "gallery"
+      "hero";
+  }
 }
 
 .main {
@@ -25,10 +35,17 @@
   margin-inline: auto;
 }
 
-@media screen and (max-width: $large) {
-  .main-grid {
-    column-gap: 5em;
+// @media screen and (max-width: $large) {
+//   :root {
+//     --main-section-gap: 0px;
+//   }
+//   // .main-grid {
+//   //   gap: 4vw;
 
-    padding-inline: 2em;
-  }
-}
+//   //   padding-inline: 2em;
+
+//   //   grid-template-areas:
+//   //     "gallery"
+//   //     "hero";
+//   // }
+// }

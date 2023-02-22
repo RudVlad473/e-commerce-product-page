@@ -1,3 +1,5 @@
+@use "../../stylesheets/abstracts/" as *;
+
 :root {
   --counter-item-size: 50px;
   --counter-item-padding: 10px;
@@ -17,13 +19,19 @@
 
   font-weight: var(--bold);
 
-  
-
   & > * {
     padding: calc(var(--counter-item-padding) * 2) var(--counter-item-padding);
 
-    &:first-child, &:last-child {
+    &:first-child,
+    &:last-child {
       cursor: pointer;
     }
+  }
+}
+
+@media screen and (max-width: $large) {
+  .counter {
+    width: 100%;
+    grid-template-columns: repeat(3, 1fr);
   }
 }
