@@ -1,5 +1,6 @@
-import React, { FC } from "react"
+import { FC } from "react"
 
+import { useAdaptive } from "../../hooks/useAdaptive"
 import { useGallery } from "../../hooks/useGallery"
 import { Gallery as GalleryType } from "../../reducers/Gallery/types"
 import { getGalleryPictures } from "../../utils/getGalleryPictures"
@@ -24,19 +25,38 @@ const DesktopGallery: FC<{ openModalGallery(): void }> = ({
     setFeaturedPicture,
   } = useGallery(initialDesktopGallery)
 
+  const gallery = useAdaptive<HTMLDivElement>([
+    {
+      windowSize: "MEDIUM",
+      className: styles["gallery--medium"],
+    },
+    {
+      windowSize: "SMALL",
+      className: styles["gallery--small"],
+    },
+  ])
+
+  const controlsRef = useAdaptive<HTMLDivElement>([
+    {
+      windowSize: "MEDIUM",
+      className: styles["mobile-controls--medium"],
+    },
+  ])
+
   return (
-    <div className={styles["gallery"]}>
+    <div ref={gallery} className={styles["gallery"]}>
       <Figure
         src={pictures[featuredPic].pictureUrl}
         className={styles["featured"]}
         alt="featured picture"
         onClick={openModalGallery}
       />
-      <Controls
-        onLeftControlClick={prevPicture}
-        onRightControlClick={nextPicture}
-        containerProps={{ className: styles["mobile-controls"] }}
-      />
+      <div ref={controlsRef} className={styles["mobile-controls"]}>
+        <Controls
+          onLeftControlClick={prevPicture}
+          onRightControlClick={nextPicture}
+        />
+      </div>
 
       <Thumbnails {...{ featuredPic, setFeaturedPicture }} />
     </div>

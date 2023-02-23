@@ -35,7 +35,8 @@ const CartItem: FC<CartItemType> = ({
       </div>
       <div
         className={styles["can"]}
-        onClick={() => dispatchCart(removeItem(name))}>
+        onClick={() => dispatchCart(removeItem(name))}
+      >
         <Figure src={can} alt="can" />
       </div>
     </section>

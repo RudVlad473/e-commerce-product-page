@@ -17,4 +17,3 @@ function useWindowEvent<K extends WindowEventMapKeys>(
 }
 
 export { useWindowEvent }
-

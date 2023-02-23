@@ -1,4 +1,5 @@
 import React, { FC } from "react"
+
 import styles from "./Navlist.module.scss"
 
 const Navlist: FC<{ links: { displayName: string; link: string }[] }> = ({

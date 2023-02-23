@@ -28,35 +28,33 @@
   display: flex;
   justify-content: space-between;
 
-  &__prev {
-    @extend .base-control;
-
-    translate: calc(var(--arrow-offset) * -1);
-
-    & > * {
-      translate: calc(var(--arrow-aspect-ratio) * (-1px));
+  &--medium {
+    .prev {
+      translate: calc(var(--arrow-offset) * 1);
     }
-  }
 
-  &__next {
-    @extend .base-control;
-
-    translate: var(--arrow-offset);
-
-    & > * {
-      translate: calc(var(--arrow-aspect-ratio) * 1px);
+    .next {
+      translate: calc(var(--arrow-offset) * -1);
     }
   }
 }
 
-@media screen and (max-width: $large) {
-  .controls {
-    &__prev {
-      translate: calc(var(--arrow-offset) * 1);
-    }
+.prev {
+  @extend .base-control;
 
-    &__next {
-      translate: calc(var(--arrow-offset) * -1);
-    }
+  translate: calc(var(--arrow-offset) * -1);
+
+  & > * {
+    translate: calc(var(--arrow-aspect-ratio) * (-1px));
+  }
+}
+
+.next {
+  @extend .base-control;
+
+  translate: var(--arrow-offset);
+
+  & > * {
+    translate: calc(var(--arrow-aspect-ratio) * 1px);
   }
 }

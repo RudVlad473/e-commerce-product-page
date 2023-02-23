@@ -17,7 +17,8 @@ const Cart: FC<{ isActive: boolean }> = ({ isActive }) => {
     <section
       className={classNames(styles["cart"], {
         [styles["cart--active"]]: isActive,
-      })}>
+      })}
+    >
       <header className={styles["header"]}>Cart</header>
       <ul className={styles["cart__items"]}>
         {hasItems ? (

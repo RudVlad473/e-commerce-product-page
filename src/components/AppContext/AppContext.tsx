@@ -3,7 +3,7 @@ import React, { FC } from "react"
 import { CartContext, CartContextType } from "../../context/CartContext"
 import {
   GalleryContext,
-  GalleryContextType
+  GalleryContextType,
 } from "../../context/GalleryContext"
 
 const AppContext: FC<{

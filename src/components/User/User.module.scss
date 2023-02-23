@@ -25,6 +25,11 @@
   &:hover {
     border-color: var(--orange-200);
   }
+
+  &--small {
+    min-width: calc(var(--user-avatar-width) * 0.75);
+    max-width: calc(var(--user-avatar-width) * 0.75);
+  }
 }
 
 .cart {

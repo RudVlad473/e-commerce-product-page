@@ -1,27 +1,35 @@
-import { RefObject, useCallback } from "react"
+import { RefObject, useCallback, useRef } from "react"
 
+import { Breakpoints } from "../consts/breakpoints"
 import { useWindowEvent } from "./useWindowEvent"
 
-const useAdaptive = ({
-  windowSize,
-  className,
-  elemRef,
-}: {
-  windowSize: number
+type Props = {
+  windowSize: keyof typeof Breakpoints
   className: string
-  elemRef: RefObject<HTMLElement>
-}) => {
+}[]
+
+const useAdaptive = <T extends HTMLElement>(
+  medias: Props
+): React.RefObject<T> => {
+  const elemRef = useRef(null) as RefObject<T>
+
   const onResize = useCallback(() => {
     const currentWidth = window.innerWidth
 
-    const classList = elemRef.current?.classList as DOMTokenList
-    console.log(elemRef)
-    classList.toggle(className, currentWidth < windowSize)
-  }, [className, elemRef, windowSize])
+    const classList = elemRef.current?.classList
+
+    medias.forEach(({ className, windowSize }) => {
+      classList?.toggle(
+        className,
+        currentWidth <= parseInt(Breakpoints[windowSize])
+      )
+    })
+  }, [medias])
 
   useWindowEvent("resize", onResize)
   useWindowEvent("load", onResize)
+
+  return elemRef
 }
 
 export { useAdaptive }
-

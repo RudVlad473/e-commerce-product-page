@@ -1,7 +1,8 @@
 import classNames from "classnames"
-import React, { FC, HTMLProps, memo, useContext } from "react"
+import { FC, memo, useContext } from "react"
 
 import { GalleryContext } from "../../context/GalleryContext"
+import { useAdaptive } from "../../hooks/useAdaptive"
 import { useGallery } from "../../hooks/useGallery"
 import Figure from "../UI/Figure/Figure"
 import styles from "./Thumbnails.module.scss"
@@ -17,8 +18,15 @@ const Thumbnails: FC<ThumbnailsProps> = ({
 }) => {
   const { galleryPictures } = useContext(GalleryContext)
 
+  const containerRef = useAdaptive([
+    {
+      windowSize: "MEDIUM",
+      className: styles["container--medium"],
+    },
+  ])
+
   return (
-    <footer className={styles["container"]}>
+    <footer ref={containerRef} className={styles["container"]}>
       {galleryPictures.map(({ thumbnailUrl }, index) => (
         <Figure
           key={thumbnailUrl + index}

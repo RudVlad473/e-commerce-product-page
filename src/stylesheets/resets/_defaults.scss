@@ -18,8 +18,14 @@ body {
   padding-inline: var(--main-padding);
 }
 
-@media screen and (max-width: $large) {
+@media (max-width: $medium) {
   :root {
     --main-padding: 3em;
+  }
+}
+
+@media (max-width: $small) {
+  body {
+    padding-inline: 0px;
   }
 }

@@ -2,6 +2,8 @@
 
 :root {
   --main-section-gap: 6em;
+
+  --main-grid-padding: 3.5em;
 }
 
 .main-grid {
@@ -11,12 +13,14 @@
 
   align-items: center;
 
-  padding-inline: 3.5em;
+  margin-inline: var(--main-grid-padding);
+
+  max-width: 100%;
 
   &--medium {
     gap: 4vw;
 
-    padding-inline: 2em;
+    margin-inline: calc(var(--main-grid-padding) * 0.5);
 
     grid-template-areas:
       "gallery"
@@ -30,22 +34,17 @@
   gap: var(--main-section-gap);
   padding-bottom: var(--main-section-gap);
 
-  max-width: 1100px;
+  max-width: 1200px;
 
   margin-inline: auto;
+
+  &--medium {
+    max-width: 100%;
+  }
 }
 
-// @media screen and (max-width: $large) {
-//   :root {
-//     --main-section-gap: 0px;
-//   }
-//   // .main-grid {
-//   //   gap: 4vw;
-
-//   //   padding-inline: 2em;
-
-//   //   grid-template-areas:
-//   //     "gallery"
-//   //     "hero";
-//   // }
-// }
+@media (max-width: $small) {
+  :root {
+    --main-section-gap: 0;
+  }
+}

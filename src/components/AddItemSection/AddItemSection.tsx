@@ -1,6 +1,7 @@
 import { FC } from "react"
 
 import cart from "../../assets/icon-white-cart.svg"
+import { useAdaptive } from "../../hooks/useAdaptive"
 import { useAddItem } from "../../hooks/useAddItem"
 import { CartItem } from "../../reducers/Cart/types"
 import Counter from "../Counter/Counter"
@@ -19,8 +20,15 @@ const AddItemSection: FC<AddItemSectionProps> = ({
     { name, price, quantity }
   )
 
+  const footerRef = useAdaptive([
+    {
+      windowSize: "MEDIUM",
+      className: styles["footer--medium"],
+    },
+  ])
+
   return (
-    <footer className={styles["footer"]}>
+    <footer ref={footerRef} className={styles["footer"]}>
       <Counter value={productQuantity} setValue={setProductQuantity} />
       <Button onClick={onAddItemBtnClick}>
         <div className={styles["cart-btn"]}>

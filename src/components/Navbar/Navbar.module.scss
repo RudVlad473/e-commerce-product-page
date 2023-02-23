@@ -11,14 +11,24 @@
   border-bottom: 2px solid var(--blue-100);
 
   //padding-block: var(--nav-gap);
+  &--small {
+    padding-block: calc(var(--nav-gap) * 0.375);
+    padding-inline: calc(var(--main-grid-padding) * 0.5);
+  }
 }
 
 .logo {
   min-width: fit-content;
 }
 
-@media screen and (max-width: $large) {
+.nav-list {
+  &--hidden {
+    display: none;
+  }
+}
+
+@media (max-width: $medium) {
   :root {
-  --nav-gap: 1.5em;
+    --nav-gap: 1.5em;
   }
 }

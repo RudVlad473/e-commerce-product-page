@@ -8,6 +8,10 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--gallery-gap);
+
+  &--medium {
+    display: none;
+  }
 }
 
 .thumbnail {
@@ -29,11 +33,5 @@
     &:hover {
       opacity: 0.75;
     }
-  }
-}
-
-@media screen and (max-width: $large) {
-  .container {
-    display: none;
   }
 }

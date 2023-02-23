@@ -1,4 +1,4 @@
-import React, { useReducer, useRef, useState } from "react"
+import React, { useReducer, useState } from "react"
 
 import styles from "./App.module.scss"
 import AppContext from "./components/AppContext/AppContext"
@@ -6,7 +6,6 @@ import BlackBg from "./components/BlackBg/BlackBg"
 import Hero, { HeroProps } from "./components/Hero/Hero"
 import LoadingDesktopGallery from "./components/LoadingDesktopGallery/LoadingDesktopGallery"
 import Navbar from "./components/Navbar/Navbar"
-import { Breakpoints } from "./consts/breakpoints"
 import { useAdaptive } from "./hooks/useAdaptive"
 import { cartReducer } from "./reducers/Cart/cart"
 import { Cart } from "./reducers/Cart/types"
@@ -35,19 +34,31 @@ const App = () => {
   const [cart, dispatchCart] = useReducer(cartReducer, initialCart)
   const [isModalGallery, setIsModalGallery] = useState(false)
 
-  const mainRef = useRef(null)
-  useAdaptive({
-    windowSize: Breakpoints.MEDIUM,
-    elemRef: mainRef,
-    className: styles["main--medium"],
-  })
+  const mainRef = useAdaptive([
+    {
+      windowSize: "MEDIUM",
+      className: styles["main--medium"],
+    },
+    {
+      windowSize: "SMALL",
+      className: styles["main--small"],
+    },
+  ])
+
+  const mainGridRef = useAdaptive<HTMLDivElement>([
+    {
+      windowSize: "MEDIUM",
+      className: styles["main-grid--medium"],
+    },
+  ])
 
   return (
     <AppContext
       values={{ cart, dispatchCart, galleryPictures: getGalleryPictures() }}>
-      <main  className={styles["main"]}>
+      <main ref={mainRef} className={styles["main"]}>
         <Navbar />
-        <div ref={mainRef} className={styles["main-grid"]}>
+
+        <div ref={mainGridRef} className={styles["main-grid"]}>
           <React.Suspense fallback={<LoadingDesktopGallery />}>
             <DesktopGallery openModalGallery={() => setIsModalGallery(true)} />
           </React.Suspense>

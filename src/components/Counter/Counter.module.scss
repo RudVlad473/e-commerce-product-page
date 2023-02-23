@@ -27,10 +27,8 @@
       cursor: pointer;
     }
   }
-}
 
-@media screen and (max-width: $large) {
-  .counter {
+  &--medium {
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
   }

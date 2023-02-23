@@ -1,4 +1,5 @@
 import React, { FC } from "react"
+
 import { getPrice } from "../../utils/getPrice"
 import styles from "./Price.module.scss"
 

@@ -4,6 +4,10 @@
 .footer {
   display: flex;
   gap: var(--footer-gap);
+
+  &--medium {
+    flex-wrap: wrap;
+  }
 }
 
 .cart-btn {
@@ -15,10 +19,4 @@
 
 .cart {
   @extend u, .cart !optional;
-}
-
-@media screen and (max-width: $large) {
-  .footer {
-    flex-wrap: wrap;
-  }
 }

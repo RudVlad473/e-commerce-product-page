@@ -1,6 +1,5 @@
 import { GalleryPicture } from "../../context/GalleryContext"
 
-
 type GalleryTypes = "SET_FEATURED_PIC" | "NEXT_PIC" | "PREV_PIC"
 
 type Gallery = {
