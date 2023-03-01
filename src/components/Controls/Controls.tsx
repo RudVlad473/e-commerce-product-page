@@ -1,5 +1,5 @@
 import classNames from "classnames"
-import { FC, HTMLProps, useRef } from "react"
+import { FC, HTMLProps } from "react"
 
 import rightArrow from "../../assets/icon-next.svg"
 import leftArrow from "../../assets/icon-previous.svg"
@@ -21,6 +21,7 @@ const Controls: FC<ControlsProps> = ({
 }) => {
   const controlsRef = useAdaptive<HTMLDivElement>([
     { windowSize: "MEDIUM", className: styles["controls--medium"] },
+    { windowSize: "SMALL", className: styles["controls--small"] },
   ])
 
   return (

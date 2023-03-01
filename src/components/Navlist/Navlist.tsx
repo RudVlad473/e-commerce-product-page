@@ -1,12 +1,21 @@
-import React, { FC } from "react"
+import classNames from "classnames"
+import { FC } from "react"
 
 import styles from "./Navlist.module.scss"
 
-const Navlist: FC<{ links: { displayName: string; link: string }[] }> = ({
-  links,
-}) => {
+type Link = { displayName: string; link: string }
+
+type NavlistProps = {
+  links: Link[]
+  display?: "VERTICAL" | "HORIZONTAL"
+}
+
+const Navlist: FC<NavlistProps> = ({ links, display = "HORIZONTAL" }) => {
   return (
-    <ul className={styles["nav-list"]}>
+    <ul
+      className={classNames(styles["nav-list"], {
+        [styles["nav-list--vertical"]]: display === "VERTICAL",
+      })}>
       {links.map(({ displayName, link }) => (
         <li key={displayName}>
           <a href={link}>{displayName}</a>
@@ -17,3 +26,4 @@ const Navlist: FC<{ links: { displayName: string; link: string }[] }> = ({
 }
 
 export default Navlist
+export type { Link }

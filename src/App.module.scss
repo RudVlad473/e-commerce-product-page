@@ -20,11 +20,13 @@
   &--medium {
     gap: 4vw;
 
-    margin-inline: calc(var(--main-grid-padding) * 0.5);
-
     grid-template-areas:
       "gallery"
       "hero";
+  }
+
+  &--small {
+    margin-inline: 0px;
   }
 }
 
@@ -32,7 +34,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--main-section-gap);
-  padding-bottom: var(--main-section-gap);
+  padding-bottom: max(var(--main-section-gap), 2em);
 
   max-width: 1200px;
 

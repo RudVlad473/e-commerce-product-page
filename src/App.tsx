@@ -6,6 +6,7 @@ import BlackBg from "./components/BlackBg/BlackBg"
 import Hero, { HeroProps } from "./components/Hero/Hero"
 import LoadingDesktopGallery from "./components/LoadingDesktopGallery/LoadingDesktopGallery"
 import Navbar from "./components/Navbar/Navbar"
+import Portal from "./components/Portal/Portal"
 import { useAdaptive } from "./hooks/useAdaptive"
 import { cartReducer } from "./reducers/Cart/cart"
 import { Cart } from "./reducers/Cart/types"
@@ -50,6 +51,10 @@ const App = () => {
       windowSize: "MEDIUM",
       className: styles["main-grid--medium"],
     },
+    {
+      windowSize: "SMALL",
+      className: styles["main-grid--small"],
+    },
   ])
 
   return (
@@ -66,12 +71,12 @@ const App = () => {
         </div>
 
         {isModalGallery && (
-          <>
+          <Portal>
             <BlackBg onClick={() => setIsModalGallery(false)} />
             <React.Suspense fallback={<LoadingDesktopGallery />}>
               <ModalGallery closeModal={() => setIsModalGallery(false)} />
             </React.Suspense>
-          </>
+          </Portal>
         )}
       </main>
     </AppContext>

@@ -22,13 +22,25 @@
 }
 
 .nav-list {
+
+  margin-left: calc(var(--nav-gap) * 2);
   &--hidden {
     display: none;
   }
 }
 
+.menu {
+  display: none;
+}
+
 @media (max-width: $medium) {
   :root {
     --nav-gap: 1.5em;
+  }
+}
+
+@media (max-width: $small) {
+  .nav {
+    gap: var(--nav-gap);
   }
 }

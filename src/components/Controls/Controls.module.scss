@@ -37,6 +37,13 @@
       translate: calc(var(--arrow-offset) * -1);
     }
   }
+
+  &--small {
+    .prev,
+    .next {
+      width: calc(var(--user-avatar-width) * 0.75);
+    }
+  }
 }
 
 .prev {

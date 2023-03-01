@@ -7,7 +7,7 @@
 
   height: 100%;
 
-  margin-left: calc(var(--nav-gap) * 2);
+  //margin-left: calc(var(--nav-gap) * 2);
 
   color: var(--blue-300);
   //opacity: 0.5;
@@ -23,6 +23,24 @@
 
     &:hover {
       border-bottom-color: var(--orange-200);
+    }
+  }
+
+  &--vertical {
+    flex-direction: column;
+
+    & > * {
+      width: 100%;
+
+      border-bottom: none;
+
+      margin-bottom: none;
+
+      padding-block: none;
+
+      &:hover {
+        border-bottom-color: none;
+      }
     }
   }
 }

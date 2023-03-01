@@ -28,6 +28,7 @@ const useAdaptive = <T extends HTMLElement>(
 
   useWindowEvent("resize", onResize)
   useWindowEvent("load", onResize)
+  useWindowEvent("DOMContentLoaded", onResize)
 
   return elemRef
 }

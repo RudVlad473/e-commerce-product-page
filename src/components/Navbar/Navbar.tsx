@@ -1,9 +1,18 @@
 import logo from "../../assets/logo.svg"
 import { useAdaptive } from "../../hooks/useAdaptive"
-import Navlist from "../Navlist/Navlist"
+import Navlist, { Link } from "../Navlist/Navlist"
+import SideMenu from "../SideMenu/SideMenu"
 import Figure from "../UI/Figure/Figure"
 import User from "../User/User"
 import styles from "./Navbar.module.scss"
+
+const links: Link[] = [
+  { displayName: "Collections", link: "#" },
+  { displayName: "Men", link: "#" },
+  { displayName: "Women", link: "#" },
+  { displayName: "About", link: "#" },
+  { displayName: "Contact", link: "#" },
+]
 
 const Navbar = () => {
   const navRef = useAdaptive<HTMLDivElement>([
@@ -22,18 +31,11 @@ const Navbar = () => {
 
   return (
     <nav ref={navRef} className={styles["nav"]}>
+      <SideMenu links={links} />
       <Figure src={logo} alt="SNEAKERS" className={styles["logo"]} />
 
       <div ref={navlistRef} className={styles["nav-list"]}>
-        <Navlist
-          links={[
-            { displayName: "Collections", link: "#" },
-            { displayName: "Men", link: "#" },
-            { displayName: "Women", link: "#" },
-            { displayName: "About", link: "#" },
-            { displayName: "Contact", link: "#" },
-          ]}
-        />
+        <Navlist links={links} />
       </div>
 
       <User />
@@ -42,3 +44,4 @@ const Navbar = () => {
 }
 
 export default Navbar
+export { links }
