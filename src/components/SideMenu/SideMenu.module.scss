@@ -1,5 +1,7 @@
+@use "../../stylesheets/abstracts/" as *;
+
 .menu {
-  display: block;
+  display: none;
   margin-bottom: -0.275em;
 }
 
@@ -26,5 +28,11 @@
   &--hidden {
     left: -100%;
     opacity: 0;
+  }
+}
+
+@media (max-width: $small) {
+  .menu {
+    display: block;
   }
 }
