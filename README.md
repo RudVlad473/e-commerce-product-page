@@ -4,7 +4,6 @@
 2. delete an item fromthe cart
 3. view the cart
 4. scroll through gallery (+ fullscreen version) of pictures.
-***
 ## Stack:
 + React
 + Vite
