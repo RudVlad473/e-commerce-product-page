@@ -25,6 +25,9 @@
   font-weight: var(--bold);
   color: black;
 
+  padding-block: calc(var(--nav-gap) );
+    padding-inline: calc(var(--main-grid-padding) * 0.5);
+
   &--hidden {
     left: -100%;
     opacity: 0;
