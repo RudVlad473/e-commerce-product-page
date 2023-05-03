@@ -10,18 +10,18 @@ const useAddItem = ({ name, price, quantity = 0 }: AddItemSectionProps) => {
   const [productQuantity, setProductQuantity] = useState(quantity)
 
   const onAddItemBtnClick = useCallback(() => {
-    if (productQuantity > 0) {
-      dispatchCart(
-        addItem({
-          name,
-          price: price,
-          quantity: productQuantity,
-          thumbnailUrl: "",
-        } as CartItem)
-      )
-    } else {
+    if (productQuantity === 0) {
       alert("Select how many items of products you want to add to cart")
     }
+
+    dispatchCart(
+      addItem({
+        name,
+        price: price,
+        quantity: productQuantity,
+        thumbnailUrl: "",
+      } as CartItem)
+    )
   }, [productQuantity, dispatchCart, name, price])
 
   return { productQuantity, setProductQuantity, onAddItemBtnClick }
