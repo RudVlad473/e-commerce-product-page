@@ -11,3 +11,16 @@
 + React Context
 + SCSS (modules)
 + Adaptive/responsive design
+
+# Technologies
+
+- **React**
+- **Typescript**
+
+##UI
+
+- **SCSS Modules**
+
+##State management
+
+- **React Context**
