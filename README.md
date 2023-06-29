@@ -17,10 +17,10 @@
 - **React**
 - **Typescript**
 
-##UI
+## UI
 
 - **SCSS Modules**
 
-##State management
+## State management
 
 - **React Context**
