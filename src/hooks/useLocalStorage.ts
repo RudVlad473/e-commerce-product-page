@@ -1,3 +1,0 @@
-const useLocalStorage = () => {}
-
-export { useLocalStorage }

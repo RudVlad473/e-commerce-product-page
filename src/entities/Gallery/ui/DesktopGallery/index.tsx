@@ -1,0 +1,1 @@
+export { DesktopGallery } from "./DesktopGallery"

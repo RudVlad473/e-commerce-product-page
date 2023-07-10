@@ -1,0 +1,20 @@
+@use "../../../../shared/stylesheets/abstracts/" as *;
+
+.footer {
+  display: flex;
+  gap: var(--footer-gap);
+
+  &--medium {
+    flex-wrap: wrap;
+  }
+}
+
+.cart-btn {
+  display: flex;
+  gap: var(--footer-gap);
+
+  white-space: nowrap;
+}
+
+.cart {
+}

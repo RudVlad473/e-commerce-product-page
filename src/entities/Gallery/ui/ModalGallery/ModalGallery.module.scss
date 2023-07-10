@@ -1,0 +1,33 @@
+@use "../../../../shared/stylesheets/abstracts/" as *;
+@use "../../../../shared/stylesheets/components/" as c;
+
+:root {
+  --gallery-gap: 1.5em;
+}
+
+.gallery {
+  @extend c, .gallery !optional;
+}
+
+.featured {
+  @extend c, .featured !optional;
+}
+
+.main {
+  position: relative;
+}
+
+.thumbnails-container {
+  padding-inline: var(--gallery-gap);
+}
+
+.close-btn {
+  border: none;
+  outline: none;
+
+  background-color: transparent;
+
+  width: fit-content;
+
+  margin-left: auto;
+}

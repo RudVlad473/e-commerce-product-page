@@ -1,0 +1,27 @@
+:root {
+  --cart-padding: 1.5em;
+}
+
+.cart {
+  border-radius: var(--gallery__pic-border-radius);
+
+  background-color: var(--white);
+
+  min-width: 375px;
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+
+    padding: var(--cart-padding);
+  }
+}
+
+.header {
+  padding: var(--cart-padding);
+
+  border-bottom: 2px solid var(--blue-100);
+
+  font-weight: var(--bold);
+}
