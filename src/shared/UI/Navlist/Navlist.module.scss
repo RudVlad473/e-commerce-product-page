@@ -12,17 +12,21 @@
   color: var(--blue-300);
   //opacity: 0.5;
 
-  & > * {
-    transition: all 0.2s ease-in;
+  font-weight: var(--bold);
 
-    border-bottom: var(--item-border-bottom) solid transparent;
+  &--horizontal {
+    & > * {
+      transition: all 0.2s ease-in;
 
-    margin-bottom: calc(var(--item-border-bottom) * -1);
+      border-bottom: var(--item-border-bottom) solid transparent;
 
-    padding-block: var(--nav-gap);
+      margin-bottom: calc(var(--item-border-bottom) * -1);
 
-    &:hover {
-      border-bottom-color: var(--orange-200);
+      padding-block: var(--nav-gap);
+
+      &:hover {
+        border-bottom-color: var(--orange-200);
+      }
     }
   }
 
@@ -31,16 +35,6 @@
 
     & > * {
       width: 100%;
-
-      border-bottom: none;
-
-      margin-bottom: none;
-
-      padding-block: none;
-
-      &:hover {
-        border-bottom-color: none;
-      }
     }
   }
 }

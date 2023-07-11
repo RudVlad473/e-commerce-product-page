@@ -7,7 +7,7 @@
 }
 
 .base-control {
-  --padding: 0.5em;
+  --padding: #{$ui-step * 0.5};
 
   display: flex;
   align-items: center;

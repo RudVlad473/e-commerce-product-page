@@ -1,12 +1,11 @@
 @use "../../../../shared/stylesheets/abstracts/" as *;
 @use "../../../../shared/stylesheets/components/" as c;
-
-:root {
-  --gallery-gap: 1.5em;
-}
+@use "../../../../shared/stylesheets/mixins/" as m;
 
 .gallery {
   @extend c, .gallery !optional;
+
+  @include m.z-index-modal;
 }
 
 .featured {

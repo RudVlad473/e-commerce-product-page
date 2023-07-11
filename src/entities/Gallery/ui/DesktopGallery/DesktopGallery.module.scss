@@ -2,7 +2,7 @@
 @use "../../../../shared/stylesheets/components/" as c;
 
 :root {
-  --gallery-gap: 1.5em;
+  --gallery-gap: #{$ui-step * 2};
 }
 
 .gallery {

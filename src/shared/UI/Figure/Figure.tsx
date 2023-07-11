@@ -1,5 +1,5 @@
 import classNames from "classnames"
-import React, { FC, HTMLProps } from "react"
+import { FC, HTMLProps } from "react"
 
 import styles from "./Figure.module.scss"
 

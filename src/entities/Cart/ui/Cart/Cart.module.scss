@@ -1,5 +1,7 @@
+@use "../../../../shared/stylesheets/abstracts/" as *;
+
 :root {
-  --cart-padding: 1.5em;
+  --cart-padding: #{$ui-step * 2};
 }
 
 .cart {

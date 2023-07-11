@@ -1,7 +1,7 @@
 @use "../../../../shared/stylesheets/abstracts/" as *;
 
 :root {
-  --footer-gap: 1em;
+  --footer-gap: #{$ui-step};
 }
 
 .hero {
@@ -20,19 +20,19 @@
 .headers-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: #{$ui-step};
 }
 
 .subheader {
   color: var(--orange-200);
-  font-size: 0.9em;
+  font-size: $fs-50;
   letter-spacing: 0.1em;
 
   opacity: 0.9;
 }
 
 .header {
-  font-size: 2.5em;
+  font-size: $fs-300;
 }
 
 .article {

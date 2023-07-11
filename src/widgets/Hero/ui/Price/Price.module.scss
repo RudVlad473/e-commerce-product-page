@@ -1,5 +1,7 @@
+@use "../../../../shared/stylesheets/abstracts/" as *;
+
 :root {
-  --price-gap: 0.5em;
+  --price-gap: #{$ui-step * 0.5};
 }
 
 .price {

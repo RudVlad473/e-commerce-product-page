@@ -1,7 +1,35 @@
-import { FC, HTMLProps } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { FC } from "react"
 
+import { galleryAnimationSpeed } from "../../../entities/Gallery/consts"
 import styles from "./BlackBg.module.scss"
 
-export const BlackBg: FC<HTMLProps<HTMLDivElement>> = (props) => {
-  return <div {...props} className={styles["black-bg"]}></div>
+type BlackBgProps = {
+  isActive: boolean
+  onClick: () => void
+}
+
+export const BlackBg: FC<BlackBgProps> = ({ isActive, onClick }) => {
+  return (
+    <AnimatePresence>
+      {isActive && (
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 0.75,
+          }}
+          exit={{
+            opacity: 0,
+          }}
+          transition={{
+            duration: galleryAnimationSpeed,
+          }}
+          className={styles["black-bg"]}
+          onClick={onClick}
+        />
+      )}
+    </AnimatePresence>
+  )
 }

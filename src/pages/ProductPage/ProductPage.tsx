@@ -49,14 +49,15 @@ export const ProductPage: FC = () => {
         <Hero />
       </div>
 
-      {showModalGallery && (
-        <Portal>
-          <BlackBg onClick={toggleShowModalGallery} />
-          <React.Suspense fallback={<LoadingDesktopGallery />}>
-            <ModalGallery closeModal={toggleShowModalGallery} />
-          </React.Suspense>
-        </Portal>
-      )}
+      <Portal>
+        <BlackBg isActive={showModalGallery} onClick={toggleShowModalGallery} />
+        <React.Suspense fallback={<LoadingDesktopGallery />}>
+          <ModalGallery
+            isActive={showModalGallery}
+            closeModal={toggleShowModalGallery}
+          />
+        </React.Suspense>
+      </Portal>
     </main>
   )
 }

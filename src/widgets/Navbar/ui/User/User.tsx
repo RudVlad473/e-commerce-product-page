@@ -1,5 +1,5 @@
 import classNames from "classnames"
-import React from "react"
+import { motion } from "framer-motion"
 
 import { useNavbarCart } from "../../../../entities/Cart/lib/hooks/useNavbarCart"
 import { Cart } from "../../../../entities/Cart/ui/Cart"
@@ -29,12 +29,12 @@ export const User = () => {
         </div>
       </div>
       <Portal>
-        <div
+        <motion.div
           className={classNames(styles["cart-modal"], {
             [styles["cart-modal--active"]]: isCartActive,
           })}>
           <Cart />
-        </div>
+        </motion.div>
       </Portal>
     </>
   )

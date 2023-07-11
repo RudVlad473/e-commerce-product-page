@@ -1,7 +1,7 @@
 @use "../abstracts/" as *;
 
 :root {
-  --main-padding: 7em;
+  --main-padding: #{$ui-step * 6};
 }
 
 html {
@@ -16,11 +16,13 @@ body {
   background-color: var(--white);
 
   padding-inline: var(--main-padding);
+
+  font-size: $fs-100;
 }
 
 @media (max-width: $medium) {
   :root {
-    --main-padding: 3em;
+    --main-padding: #{$ui-step * 3};
   }
 }
 

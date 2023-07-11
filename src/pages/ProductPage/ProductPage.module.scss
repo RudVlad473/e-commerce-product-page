@@ -1,9 +1,9 @@
 @use "../../shared/stylesheets/abstracts/" as *;
 
 :root {
-  --main-section-gap: 6em;
+  --main-section-gap: #{$ui-step * 4};
 
-  --main-grid-padding: 3.5em;
+  --main-grid-padding: #{$ui-step * 3};
 }
 
 .main-grid {

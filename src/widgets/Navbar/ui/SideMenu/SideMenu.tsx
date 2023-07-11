@@ -1,6 +1,8 @@
 import classNames from "classnames"
+import { motion } from "framer-motion"
 import { FC } from "react"
 
+import { BlackBg } from "../../../../shared/UI"
 import { Figure } from "../../../../shared/UI/Figure"
 import { Navlist } from "../../../../shared/UI/Navlist/Navlist"
 import { Portal } from "../../../../shared/UI/Portal"
@@ -18,16 +20,31 @@ export const SideMenu: FC<{ links: any[] }> = ({ links }) => {
         <Figure src={menu} alt="menu" />
       </div>
       <Portal>
-        <aside
-          className={classNames(styles["sidebar"], {
-            [styles["sidebar--hidden"]]: !isMenuOpen,
-          })}>
-          <div onPointerDown={toggleMenu}>
+        <motion.aside
+          initial={{
+            left: "-100%",
+            opacity: 0,
+          }}
+          animate={{
+            left: isMenuOpen ? 0 : "-100%",
+            opacity: +isMenuOpen,
+          }}
+          exit={{
+            left: "-100%",
+            opacity: 0,
+          }}
+          transition={{
+            duration: 0.75,
+          }}
+          className={styles["sidebar"]}>
+          <div onPointerDown={toggleMenu} className={styles.close}>
             <Figure src={close} alt="X" />
           </div>
 
           <Navlist links={links} display="VERTICAL" />
-        </aside>
+        </motion.aside>
+
+        <BlackBg isActive={isMenuOpen} onClick={toggleMenu} />
       </Portal>
     </>
   )
