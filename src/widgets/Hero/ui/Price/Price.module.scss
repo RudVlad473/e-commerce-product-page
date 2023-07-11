@@ -1,0 +1,39 @@
+@use "../../../../shared/stylesheets/abstracts/" as *;
+
+:root {
+  --price-gap: #{$ui-step * 0.5};
+}
+
+.price {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: var(--price-gap);
+  align-items: center;
+
+  width: min-content;
+
+  font-weight: var(--bold);
+}
+
+.current-price {
+  color: var(--black);
+
+  font-size: 2em;
+}
+
+.discount {
+  width: min-content;
+  height: min-content;
+
+  background-color: var(--orange-150);
+
+  color: var(--orange-200);
+
+  border-radius: 0.5em;
+
+  padding: 0.25em 0.5em;
+}
+
+.initial-price {
+  opacity: 0.3;
+}

@@ -1,0 +1,32 @@
+@use "../../../../shared/stylesheets/abstracts/" as *;
+@use "../../../../shared/stylesheets/components/" as c;
+@use "../../../../shared/stylesheets/mixins/" as m;
+
+.gallery {
+  @extend c, .gallery !optional;
+
+  @include m.z-index-modal;
+}
+
+.featured {
+  @extend c, .featured !optional;
+}
+
+.main {
+  position: relative;
+}
+
+.thumbnails-container {
+  padding-inline: var(--gallery-gap);
+}
+
+.close-btn {
+  border: none;
+  outline: none;
+
+  background-color: transparent;
+
+  width: fit-content;
+
+  margin-left: auto;
+}

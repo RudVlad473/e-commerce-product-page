@@ -1,0 +1,33 @@
+@use "../abstracts/" as *;
+
+:root {
+  --main-padding: #{$ui-step * 6};
+}
+
+html {
+  font-family: var(--mainFontFamily), "Calibri";
+  scroll-behavior: smooth;
+}
+
+body {
+  color: var(--blue-400);
+  font-weight: var(--normal);
+
+  background-color: var(--white);
+
+  padding-inline: var(--main-padding);
+
+  font-size: $fs-100;
+}
+
+@media (max-width: $medium) {
+  :root {
+    --main-padding: #{$ui-step * 3};
+  }
+}
+
+@media (max-width: $small) {
+  body {
+    padding-inline: 0px;
+  }
+}

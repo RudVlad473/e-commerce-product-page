@@ -1,0 +1,28 @@
+@use "../../../../shared/stylesheets/abstracts/" as *;
+@use "../../../../shared/stylesheets/components/" as c;
+
+:root {
+  --gallery-gap: #{$ui-step * 2};
+}
+
+.gallery {
+  @extend c, .gallery !optional;
+}
+
+.featured {
+  @extend c, .featured !optional;
+}
+
+.mobile-controls {
+  display: none !important;
+
+  &--medium {
+    display: flex !important;
+  }
+}
+
+@media (max-width: $small) {
+  .featured {
+    border-radius: 0px;
+  }
+}

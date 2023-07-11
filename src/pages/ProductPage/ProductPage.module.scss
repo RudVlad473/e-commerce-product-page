@@ -1,0 +1,52 @@
+@use "../../shared/stylesheets/abstracts/" as *;
+
+:root {
+  --main-section-gap: #{$ui-step * 4};
+
+  --main-grid-padding: #{$ui-step * 3};
+}
+
+.main-grid {
+  display: grid;
+  grid-template-areas: "gallery hero";
+  gap: 8em;
+
+  align-items: center;
+
+  margin-inline: var(--main-grid-padding);
+
+  max-width: 100%;
+
+  &--medium {
+    gap: 4vw;
+
+    grid-template-areas:
+      "gallery"
+      "hero";
+  }
+
+  &--small {
+    margin-inline: 0px;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-section-gap);
+  padding-bottom: max(var(--main-section-gap), 2em);
+
+  max-width: 1200px;
+
+  margin-inline: auto;
+
+  &--medium {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: $small) {
+  :root {
+    --main-section-gap: 0;
+  }
+}

@@ -1,0 +1,1 @@
+export { BlackBg } from "./BlackBg"

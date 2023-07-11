@@ -1,0 +1,1 @@
+export const galleryAnimationSpeed = 0.5
