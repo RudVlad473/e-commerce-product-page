@@ -1,8 +1,8 @@
-import classNames from "classnames"
 import { AnimatePresence, motion } from "framer-motion"
 import { FC } from "react"
 
 import { Figure } from "../../../../shared/UI"
+import { CrossIcon } from "../../../../shared/UI/icons/CrossIcon"
 import close from "../../../../shared/assets/icon-close.svg"
 import { galleryAnimationSpeed, initialDesktopGallery } from "../../consts"
 import { useGallery } from "../../lib/hooks"
@@ -51,7 +51,7 @@ export const ModalGallery: FC<ModalGalleryProps> = ({
           }}
           className={styles["gallery"]}>
           <button onClick={closeModal} className={styles["close-btn"]}>
-            <Figure src={close} alt="X" width="25px" />
+            <CrossIcon />
           </button>
 
           <div className={styles["main"]}>

@@ -1,17 +1,14 @@
 @use "../../../../shared/stylesheets/abstracts/" as *;
 
 :root {
-  --counter-item-size: 50px;
-  --counter-item-padding: 10px;
+  --counter-item-size: #{$ui-step * 5};
+  --counter-item-padding: #{$ui-step};
   --counter-border-radius: 0.5em;
 }
 
 .counter {
   display: grid;
   grid-template-columns: repeat(3, var(--counter-item-size));
-  place-items: center;
-
-  width: min-content;
 
   border-radius: var(--counter-border-radius);
 
@@ -20,6 +17,12 @@
   font-weight: var(--bold);
 
   & > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+
     padding: calc(var(--counter-item-padding) * 2) var(--counter-item-padding);
 
     &:first-child,
@@ -32,4 +35,8 @@
     width: 100%;
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+.value {
+  user-select: none;
 }

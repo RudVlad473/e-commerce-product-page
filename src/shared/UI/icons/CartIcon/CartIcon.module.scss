@@ -1,0 +1,22 @@
+@use "../../../stylesheets/mixins/" as *;
+
+.cart-icon {
+  &--white {
+    path {
+      fill: var(--white);
+    }
+  }
+
+  &--black {
+    path {
+      @include transition-100;
+      fill: var(--blue-400);
+    }
+
+    &:hover {
+      path {
+        fill: var(--black-100);
+      }
+    }
+  }
+}

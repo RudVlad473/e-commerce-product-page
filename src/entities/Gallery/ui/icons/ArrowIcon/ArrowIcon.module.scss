@@ -1,0 +1,20 @@
+@use "../../../../../shared/stylesheets/mixins/" as *;
+
+.arrow-icon {
+  path {
+    @include transition-100;
+  }
+
+  &:hover {
+    path {
+      stroke: var(--orange-200);
+    }
+  }
+
+  &--to-left {
+  }
+
+  &--to-right {
+    rotate: 180deg;
+  }
+}

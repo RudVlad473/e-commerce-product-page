@@ -1,0 +1,23 @@
+@use "../../../stylesheets/mixins/" as *;
+
+.cross-icon {
+  &--black {
+    path {
+      fill: var(--black-100);
+    }
+  }
+
+  &--white {
+    path {
+      @include transition-100;
+
+      fill: var(--white);
+    }
+
+    &:hover {
+      path {
+        fill: var(--orange-200);
+      }
+    }
+  }
+}

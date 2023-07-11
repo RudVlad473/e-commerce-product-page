@@ -1,0 +1,13 @@
+@use "../../../../../shared/stylesheets/mixins/" as *;
+
+.minus-icon {
+  use {
+    @include transition-100;
+  }
+
+  &:hover {
+    use {
+      fill: var(--orange-150);
+    }
+  }
+}

@@ -6,8 +6,9 @@ import { BlackBg } from "../../../../shared/UI"
 import { Figure } from "../../../../shared/UI/Figure"
 import { Navlist } from "../../../../shared/UI/Navlist/Navlist"
 import { Portal } from "../../../../shared/UI/Portal"
-import close from "../../../../shared/assets/icon-close.svg"
+import { CrossIcon } from "../../../../shared/UI/icons/CrossIcon"
 import { useBooleanState } from "../../../../shared/hooks/useBooleanState"
+import { TCrossIconType, TListType } from "../../../../shared/types"
 import menu from "../../assets/icon-menu.svg"
 import styles from "./SideMenu.module.scss"
 
@@ -16,7 +17,7 @@ export const SideMenu: FC<{ links: any[] }> = ({ links }) => {
 
   return (
     <>
-      <div onPointerDown={toggleMenu} className={styles["menu"]}>
+      <div onClick={toggleMenu} className={styles["menu"]}>
         <Figure src={menu} alt="menu" />
       </div>
       <Portal>
@@ -38,10 +39,10 @@ export const SideMenu: FC<{ links: any[] }> = ({ links }) => {
           }}
           className={styles["sidebar"]}>
           <div onPointerDown={toggleMenu} className={styles.close}>
-            <Figure src={close} alt="X" />
+            <CrossIcon type={TCrossIconType.BLACK} />
           </div>
 
-          <Navlist links={links} display="VERTICAL" />
+          <Navlist links={links} display={TListType.VERTICAL} />
         </motion.aside>
 
         <BlackBg isActive={isMenuOpen} onClick={toggleMenu} />

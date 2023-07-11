@@ -2,9 +2,9 @@ import { FC, useContext } from "react"
 
 import { Figure } from "../../../../shared/UI"
 import { CartContext } from "../../../../shared/context/CartContext"
-import can from "../../assets/icon-delete.svg"
 import { TCartItem } from "../../lib/types"
 import { removeItem } from "../../model/reducer/actionCreators"
+import { DeleteIcon } from "../icons/DeleteIcon"
 import styles from "./CartItem.module.scss"
 
 export const CartItem: FC<TCartItem> = ({
@@ -36,7 +36,7 @@ export const CartItem: FC<TCartItem> = ({
       <div
         className={styles["can"]}
         onClick={() => dispatchCart(removeItem(name))}>
-        <Figure src={can} alt="can" />
+        <DeleteIcon />
       </div>
     </section>
   )

@@ -4,8 +4,9 @@ import { motion } from "framer-motion"
 import { useNavbarCart } from "../../../../entities/Cart/lib/hooks/useNavbarCart"
 import { Cart } from "../../../../entities/Cart/ui/Cart"
 import { Badge, Figure, Portal } from "../../../../shared/UI"
-import cart from "../../../../shared/assets/icon-cart.svg"
+import { CartIcon } from "../../../../shared/UI/icons/CartIcon"
 import { useAdaptive } from "../../../../shared/hooks/useAdaptive"
+import { TCartIconType } from "../../../../shared/types"
 import user from "../../assets/image-avatar.png"
 import styles from "./User.module.scss"
 
@@ -19,9 +20,9 @@ export const User = () => {
   return (
     <>
       <div className={styles["user-section"]}>
-        <div onPointerDown={toggleIsCartActive}>
+        <div onClick={toggleIsCartActive}>
           <Badge text={`${badgeQuantity}`} isActive={badgeQuantity > 0}>
-            <Figure src={cart} alt="cart" className={styles["cart"]} />
+            <CartIcon type={TCartIconType.BLACK} />
           </Badge>
         </div>
         <div ref={userAvatarRef} className={styles["user"]}>
@@ -30,9 +31,17 @@ export const User = () => {
       </div>
       <Portal>
         <motion.div
-          className={classNames(styles["cart-modal"], {
-            [styles["cart-modal--active"]]: isCartActive,
-          })}>
+          initial={{
+            top: "-50%",
+            boxShadow: "0px 20px 50px -20px rgba(29, 32, 38, 0.5)",
+          }}
+          animate={{
+            top: isCartActive ? "10%" : "-50%",
+          }}
+          whileHover={{
+            boxShadow: "0px 20px 40px -20px rgba(29, 32, 38, 0.5)",
+          }}
+          className={classNames(styles["cart-modal"])}>
           <Cart />
         </motion.div>
       </Portal>

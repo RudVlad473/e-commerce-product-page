@@ -1,0 +1,13 @@
+$transition-type: ease-in-out;
+
+@mixin transition-100 {
+  transition: all 0.25s $transition-type;
+}
+
+@mixin transition-200 {
+  transition: all 0.5s $transition-type;
+}
+
+@mixin transition-300 {
+  transition: all 0.75s $transition-type;
+}

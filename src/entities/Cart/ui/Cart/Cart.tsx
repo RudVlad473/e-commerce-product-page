@@ -22,7 +22,9 @@ export const Cart: FC = () => {
                 <CartItem {...item} />
               </li>
             ))}
-            <Button>Checkout</Button>
+            <li>
+              <Button>Checkout</Button>
+            </li>
           </>
         ) : (
           <EmptyCart />

@@ -1,10 +1,9 @@
 import classNames from "classnames"
 import { FC, HTMLProps } from "react"
 
-import { Figure } from "../../../../shared/UI"
 import { useAdaptive } from "../../../../shared/hooks/useAdaptive"
-import rightArrow from "../../assets/icon-next.svg"
-import leftArrow from "../../assets/icon-previous.svg"
+import { TArrowType } from "../../lib/types"
+import { ArrowIcon } from "../icons/ArrowIcon"
 import styles from "./Controls.module.scss"
 
 type ControlsProps = {
@@ -33,10 +32,10 @@ export const Controls: FC<ControlsProps> = ({
         "absolute-center"
       )}>
       <div className={styles["prev"]} onPointerDown={onLeftControlClick}>
-        <Figure src={leftArrow} alt="<" />
+        <ArrowIcon type={TArrowType.TO_LEFT} />
       </div>
       <div className={styles["next"]} onPointerDown={onRightControlClick}>
-        <Figure src={rightArrow} alt=">" />
+        <ArrowIcon type={TArrowType.TO_RIGHT} />
       </div>
     </div>
   )

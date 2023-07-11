@@ -1,4 +1,5 @@
 @use "../../../shared/stylesheets/components/" as *;
+@use "../../../shared/stylesheets/mixins/" as *;
 
 .button {
   @extend .base-element;
@@ -7,12 +8,12 @@
 
   width: 100%;
 
-  transition: all 0.25s ease-in;
+  @include transition-100;
 
   box-shadow: 0px 0.75em 0.75em 0px rgba(255, 237, 224, 0.1);
 
   &:hover {
-    box-shadow: 0px 0.5em 0.5em 0.25em rgba(255, 237, 224, 0.1);
+    background-color: var(--orange-150);
   }
 
   &:focus {

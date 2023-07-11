@@ -1,3 +1,5 @@
+@use "../../../shared/stylesheets/mixins/" as *;
+
 .nav-list {
   --item-border-bottom: 4px;
 
@@ -12,17 +14,24 @@
   color: var(--blue-300);
   //opacity: 0.5;
 
-  font-weight: var(--bold);
+  & > * {
+    &:hover {
+      color: var(--black-100);
+    }
+  }
 
   &--horizontal {
     & > * {
-      transition: all 0.2s ease-in;
-
       border-bottom: var(--item-border-bottom) solid transparent;
 
-      margin-bottom: calc(var(--item-border-bottom) * -1);
+      border-radius: 0 0 calc(var(--item-border-bottom) * 0.5)
+        calc(var(--item-border-bottom) * 0.5);
+
+      margin-bottom: calc(var(--item-border-bottom) * -0.5);
 
       padding-block: var(--nav-gap);
+
+      @include transition-200;
 
       &:hover {
         border-bottom-color: var(--orange-200);
@@ -32,6 +41,8 @@
 
   &--vertical {
     flex-direction: column;
+
+    font-weight: var(--bold);
 
     & > * {
       width: 100%;

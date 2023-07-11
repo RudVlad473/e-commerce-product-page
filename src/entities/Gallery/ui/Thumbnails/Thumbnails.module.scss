@@ -1,4 +1,5 @@
 @use "../../../../shared/stylesheets/abstracts/" as *;
+@use "../../../../shared/stylesheets/mixins/" as *;
 
 :root {
   --gallery__pic-border-radius: 0.75em;
@@ -15,7 +16,7 @@
 }
 
 .thumbnail {
-  transition: all 0.1s ease-in;
+  @include transition-100;
 
   border: 2px solid transparent;
   border-radius: var(--gallery__pic-border-radius);

@@ -1,4 +1,5 @@
 @use "../../../../shared/stylesheets/abstracts/" as *;
+@use "../../../../shared/stylesheets/mixins/" as *;
 
 :root {
   --user-avatar-width: 50px;
@@ -19,10 +20,10 @@
   min-width: var(--user-avatar-width);
   max-width: var(--user-avatar-width);
 
-  transition: all 0.1s ease-in;
-
   border-radius: 50%;
   border: 2px solid transparent;
+
+  @include transition-100;
 
   &:hover {
     border-color: var(--orange-200);
@@ -37,25 +38,23 @@
 .cart {
   min-width: calc(var(--user-avatar-width) * 0.5);
   max-width: calc(var(--user-avatar-width) * 0.5);
+
+  &:hover {
+    fill: var(--blue-400);
+  }
 }
 
 .cart-modal {
-  $cart-offset: #{$ui-step * 2};
+  @include z-index-modal;
+
+  @include transition-200;
 
   position: absolute;
-  top: calc(var(--nav-gap) * (-1) - 100%);
+  right: 15%;
+}
 
-  right: $cart-offset;
-
-  z-index: 100;
-
-  opacity: 0;
-  transition: all 1s ease-out;
-  box-shadow: 0px 0px 1.5em -1em rgba(0, 0, 0, 1);
-
-  &--active {
-    top: calc(8% + $cart-offset);
-
-    opacity: 1;
+@media only screen and (max-width: $small) {
+  .cart-modal {
+    right: 2%;
   }
 }

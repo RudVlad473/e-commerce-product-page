@@ -1,17 +1,19 @@
 import { useCallback, useContext, useState } from "react"
 
-import { AddItemSectionProps } from "../components/AddItemSection/AddItemSection"
-import { CartContext } from "../context/CartContext"
-import { addItem } from "../reducers/Cart/actionCreators"
-import { CartItem } from "../reducers/Cart/types"
+import { TCartItem } from "../../../../entities/Cart/lib/types"
+import { addItem } from "../../../../entities/Cart/model/reducer"
+import { CartContext, GalleryContext } from "../../../../shared/context"
+import { AddItemSectionProps } from "../../ui/AddItemSection/AddItemSection"
 
 const useAddItem = ({ name, price, quantity = 0 }: AddItemSectionProps) => {
   const { dispatchCart } = useContext(CartContext)
+  const { galleryPictures } = useContext(GalleryContext)
   const [productQuantity, setProductQuantity] = useState(quantity)
 
   const onAddItemBtnClick = useCallback(() => {
     if (productQuantity === 0) {
       alert("Select how many items of products you want to add to cart")
+      return
     }
 
     dispatchCart(
@@ -19,10 +21,10 @@ const useAddItem = ({ name, price, quantity = 0 }: AddItemSectionProps) => {
         name,
         price: price,
         quantity: productQuantity,
-        thumbnailUrl: "",
-      } as CartItem)
+        thumbnailUrl: galleryPictures[0].pictureUrl,
+      } as TCartItem)
     )
-  }, [productQuantity, dispatchCart, name, price])
+  }, [productQuantity, dispatchCart, name, price, galleryPictures])
 
   return { productQuantity, setProductQuantity, onAddItemBtnClick }
 }

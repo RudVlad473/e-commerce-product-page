@@ -1,39 +1,23 @@
-@use "../../stylesheets/abstracts/" as *;
+@use "../../../../shared/stylesheets/abstracts/" as *;
 
 $cart-translate: -50%;
 
 :root {
-  --cart-padding: 1.5em;
+  --cart-padding: #{$ui-step * 2};
 }
 
 .cart {
-  position: absolute;
-  top: calc(var(--nav-gap) * (-1) - 100%);
-  translate: $cart-translate;
-
-  z-index: 100;
-
-  opacity: 0;
-
   border-radius: var(--gallery__pic-border-radius);
 
-  transition: all 0.75s ease-out;
-
-  box-shadow: 0px 0px 2em -1em rgba(0, 0, 0, 1);
   background-color: var(--white);
 
-  min-width: 375px;
-
-  &--active {
-    top: 8%;
-
-    opacity: 1;
-  }
+  min-width: 360px;
+  max-width: 360px;
 
   &__items {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: #{$ui-step * 2};
 
     padding: var(--cart-padding);
   }
@@ -45,11 +29,4 @@ $cart-translate: -50%;
   border-bottom: 2px solid var(--blue-100);
 
   font-weight: var(--bold);
-}
-
-@media (max-width: $small) {
-  .cart {
-    translate: $cart-translate - 20%;
-    min-width: 300px;
-  }
 }

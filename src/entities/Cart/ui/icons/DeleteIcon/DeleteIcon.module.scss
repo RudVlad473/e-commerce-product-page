@@ -1,0 +1,20 @@
+@use "../../../../../shared/stylesheets/mixins/" as *;
+
+.delete-icon {
+  &,
+  use {
+    @include transition-100;
+  }
+
+  transform-origin: center center;
+
+  &:hover {
+    rotate: 35deg;
+
+    scale: 1.2;
+
+    use {
+      fill: var(--red-100);
+    }
+  }
+}
