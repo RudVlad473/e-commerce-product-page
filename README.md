@@ -1,6 +1,6 @@
 # e-commerce-product-page
 
-# [See project in action](https://e-commerce-product-page-pink.vercel.app/)
+## [See project in action](https://e-commerce-product-page-pink.vercel.app/)
 
 ## Application that represents product page, where users can:
 1. add an item to the cart
