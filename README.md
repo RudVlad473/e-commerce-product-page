@@ -1,13 +1,16 @@
-# e-commerce-product-page
 
-## [See project in action](https://e-commerce-product-page-pink.vercel.app/)
+# [e-commerce-product-page](https://e-commerce-product-page-pink.vercel.app/)
+
 
 ## Application that represents product page, where users can:
+
 1. add an item to the cart
-2. delete an item fromthe cart
+2. delete an item from the cart
 3. view the cart
 4. scroll through gallery (+ fullscreen version) of pictures.
+
 ## Stack:
+
 + React
 + Vite
 + Typescript
@@ -17,8 +20,8 @@
 
 # Technologies
 
-- **React**
-- **Typescript**
+ - **React** 
+ - **Typescript**
 
 ## UI
 
